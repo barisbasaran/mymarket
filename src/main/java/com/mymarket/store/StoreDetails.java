@@ -9,10 +9,7 @@ import java.util.List;
 @Value
 @Builder
 public class StoreDetails {
-
      Long id;
-
      String name;
-
     List<Product> products;
 }
