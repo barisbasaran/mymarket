@@ -6,8 +6,6 @@ import lombok.Value;
 @Builder
 @Value
 public class BadRequestError {
-
     String field;
-
     String defaultMessage;
 }
