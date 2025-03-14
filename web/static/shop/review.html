@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title data-trans="view-order"></title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=2"/>
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lib/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/css/style-f.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="header"></div>
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+
+        <h5 class="text-primary order-group" data-trans="how-was-product"></h5>
+
+        <p class="fs-5" id="message"></p>
+
+        <div class="col-sm-6 px-0">
+
+            <form id="reviewForm" method="post" class="needs-validation" novalidate>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <p class="invalid-feedback general-error"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label class="form-label fw-semibold" data-trans="rating"></label></th>
+                        <td>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="ratings">
+                                    <a href="#"><i class="fa fa-star" data-rating="1"></i></a>
+                                    <a href="#"><i class="fa fa-star" data-rating="2"></i></a>
+                                    <a href="#"><i class="fa fa-star" data-rating="3"></i></a>
+                                    <a href="#"><i class="fa fa-star" data-rating="4"></i></a>
+                                    <a href="#"><i class="fa fa-star" data-rating="5"></i></a>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback rating-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label class="form-label fw-semibold" for="comment" data-trans="comment"></label></th>
+                        <td>
+                            <textarea class="form-control" id="comment" rows="6" maxlength="3000"></textarea>
+                            <div class="invalid-feedback comment-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a id="submit" href="#" class="btn btn-primary" data-trans="submit"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+<footer id="footer" class="footer-section"></footer>
+
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/shop/js/review.js"></script>
+
+</body>
+</html>

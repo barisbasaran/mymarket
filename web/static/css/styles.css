@@ -1,0 +1,279 @@
+:root {
+    --bs-body-bg: var(--bs-gray-100);
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/*
+a.dropdown-item {
+    --bs-dropdown-link-color: red;
+}
+*/
+
+.dropdown-item img {
+    width: 25px;
+    height: 25px;
+}
+
+a.navbar-brand {
+    margin-left: 2rem;
+}
+
+a.navbar-brand img {
+    width: 30px;
+    height: 30px;
+}
+
+.nav-link.login-register img {
+    width: 25px;
+    height: 25px;
+}
+
+.username {
+    margin: 0 1rem 0 1rem !important;
+}
+
+.username span {
+    font-size: 14px;
+    color: yellow;
+    display: table-cell;
+    vertical-align: middle;
+    height: 40px;
+}
+
+img.my-market {
+    width: 70px;
+    height: 70px;
+}
+
+.hidden-area {
+    display: none;
+}
+
+.logout {
+    color: green;
+}
+
+.login-error {
+    color: red;
+}
+
+li.not-logged-in {
+    margin: 0;
+}
+
+.store-owner {
+    display: none;
+}
+
+ul li.language-sel {
+    padding-top: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.general-error {
+    font-size: 18px;
+}
+
+.carousel {
+    width: 70%;
+    height: 70%;
+}
+
+table.table tbody tr td {
+    background-color: #eff2f1;
+}
+
+table.table tbody tr th {
+    background-color: #eff2f1;
+}
+
+.custom_badge {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    color: black;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: arial, sans-serif;
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    text-align: left;
+    vertical-align: bottom;
+    margin-top: 0px;
+    margin-left: 15px;
+    padding-top: 3px;
+}
+
+.custom_input {
+    -webkit-border-radius: 12px !important;
+    text-align: start !important;
+    color: #54606C !important;
+    font-size: 18px;
+    padding-top: 25px;
+    height: 60px;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+img.product {
+    object-fit: cover;
+    width: 600px;
+    height: 500px;
+}
+
+img.product-in-cat {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+}
+
+.product-comp {
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    horiz-align: left;
+}
+
+.price {
+    color: #0a53be;
+}
+
+.carousel {
+    max-width: 700px;
+}
+
+.with-margin-top {
+    margin-top: 20px;
+}
+
+.mymarket-navbar {
+    background: #3b5d50 !important;
+}
+
+.mymarket-navbar li a {
+    --bs-nav-link-font-size: medium;
+}
+
+@media (min-width: 992px) {
+    .mymarket-navbar .mymarket-navbar-nav li {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+.mymarket-navbar .mymarket-navbar-nav li a {
+    font-weight: 500;
+    /*color: #000000 !important;*/
+    opacity: .7;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .mymarket-navbar .mymarket-navbar-nav li a:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 8px;
+        right: 8px;
+        background: #f9bf29;
+        height: 5px;
+        opacity: 1;
+        visibility: visible;
+        width: 0;
+        -webkit-transition: .15s all ease-out;
+        -o-transition: .15s all ease-out;
+        transition: .15s all ease-out;
+    }
+}
+
+.mymarket-navbar .mymarket-navbar-nav li a:hover {
+    opacity: 1;
+}
+
+.mymarket-navbar .mymarket-navbar-nav li a:hover:before {
+    width: calc(100% - 16px);
+}
+
+.subcategories {
+    margin: 2.5rem 0 0 1rem;
+}
+
+.subcategories a {
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+}
+
+.breadcrumb {
+    height: 30px;
+}
+
+.breadcrumb * {
+    color: khaki;
+    font-size: medium;
+    --bs-breadcrumb-divider-color: white;
+    --bs-breadcrumb-divider: '>';
+}
+
+.breadcrumb > .active {
+    color: #86b7fe;
+}
+
+.order-group {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.search-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.product-details {
+    width: 500px
+}
+
+.similar-products {
+    display: none;
+}
+
+.similar-product {
+    margin: 2rem 3rem 2rem 0;
+}
+
+.product-reviews {
+    display: none;
+}
+
+.ratings i {
+    color: #cecece;
+    font-size: 32px;
+}
+
+.ratings span {
+    font-size: 25px;
+}
+
+.ratings-medium i {
+    color: #cecece;
+    font-size: 23px;
+}
+
+.ratings-small i {
+    color: #cecece;
+    font-size: 14px;
+}
+
+.rating-color {
+    color: #fbc634 !important;
+}
+
+.product-filter {
+    font-size: 1.3rem;
+}

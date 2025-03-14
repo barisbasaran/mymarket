@@ -1,0 +1,74 @@
+services:
+  elasticsearch:
+    image: elasticsearch:8.17.1
+    ports:
+      - "9201:9200"
+    environment:
+      - cluster.name=elasticsearch
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=${SEARCH_PASSWORD}
+      - xpack.security.enabled=false
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl --output /dev/null --silent --head --fail -u ${SEARCH_USERNAME}:${SEARCH_PASSWORD} http://elasticsearch:9200",
+        ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    networks:
+      - mynetwork
+  db:
+    image: "postgres:latest"
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: "mydb"
+      POSTGRES_USER: ${SPRING_DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    networks:
+      - mynetwork
+  app:
+    build: .
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://db:5432/mydb"
+      SEARCH_URL: "elasticsearch:9200"
+      WEB_BASE_DIRECTORY: "/home"
+      APP_BASE_URL: "http://localhost"
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      EMAIL_USERNAME: ${EMAIL_USERNAME}
+      EMAIL_PASSWORD: ${EMAIL_PASSWORD}
+      SEARCH_USERNAME: ${SEARCH_USERNAME}
+      SEARCH_PASSWORD: ${SEARCH_PASSWORD}
+      SEARCH_API_KEY: ${SEARCH_API_KEY}
+      SECURITY_JWT_SECRET_KEY: ${SECURITY_JWT_SECRET_KEY}
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+      db:
+        condition: service_started
+    networks:
+      - mynetwork
+    volumes:
+      - app-volume:/home
+  web:
+    build: ./web
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    profiles:
+      - local
+    networks:
+      - mynetwork
+    volumes:
+      - app-volume:/home
+networks:
+  mynetwork:
+    driver: bridge
+volumes:
+  app-volume:

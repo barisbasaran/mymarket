@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: mymarket
+  config:
+    import: "optional:file:.env[.properties]"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mymarketdb
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 10240MB
+      enabled: true
+server:
+  error:
+    include-stacktrace: never
+  forward-headers-strategy: native
+  servlet:
+    context-path: /service
+
+email:
+  host: live.smtp.mailtrap.io
+  port: 587
+  username: ${EMAIL_USERNAME}
+  password: ${EMAIL_PASSWORD}
+
+search:
+  username: ${SEARCH_USERNAME}
+  password: ${SEARCH_PASSWORD}
+  api-key: ${SEARCH_API_KEY}
+  url: localhost:9200
+
+security:
+  jwt:
+    secret-key: ${SECURITY_JWT_SECRET_KEY}
+    expiration-time: 18000000
+web:
+  base:
+    directory: web/static
+app:
+  base:
+    url: https://localhost

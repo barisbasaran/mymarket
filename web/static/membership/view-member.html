@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta data-require-login="true">
+    <title data-trans="viw-account"></title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=2"/>
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lib/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/css/style-f.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="header"></div>
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+
+        <h2 data-trans="viw-account"></h2>
+
+        <div class="col-sm-8 px-0">
+
+            <p class="fs-5" data-trans="find-account-details"></p>
+
+            <table class="table" id="member-table">
+                <tr>
+                    <th colspan="2" class="text-primary" data-trans="contact-information"></th>
+                </tr>
+                <tr>
+                    <th class="fw-semibold" data-trans="name"></th>
+                    <td id="name"></td>
+                </tr>
+                <tr>
+                    <th class="fw-semibold" data-trans="email"></th>
+                    <td id="email"></td>
+                </tr>
+                <tr>
+                    <th class="fw-semibold" data-trans="phone"></th>
+                    <td id="phone"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a id="editMemberButton" href="/membership/update-member.html" class="btn btn-primary"
+                           style="display:none;" data-trans="edit"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="text-primary" data-trans="address-information"></th>
+                </tr>
+                <tr>
+                    <th class="fw-semibold" data-trans="country"></th>
+                    <td id="countryName"></td>
+                </tr>
+                <tr style="display: none" id="state">
+                    <th class="fw-semibold" data-trans="state"></th>
+                    <td id="stateName"></td>
+                </tr>
+                <tr>
+                    <th class="fw-semibold" data-trans="city"></th>
+                    <td id="cityName"></td>
+                </tr>
+                <tr>
+                    <th class="fw-semibold" data-trans="address-line"></th>
+                    <td id="addressLine"></td>
+                </tr>
+                <tr>
+                    <th class="fw-semibold" data-trans="postal-code"></th>
+                    <td id="postalCode"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a href="javascript:history.back()" class="btn btn-primary" data-trans="back"></a>
+                        <a id="editAddressButton" href="/membership/update-address.html" class="btn btn-primary"
+                           style="display:none;" data-trans="edit"></a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<footer id="footer" class="footer-section"></footer>
+
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/membership/js/view-member.js"></script>
+
+</body>
+</html>

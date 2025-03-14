@@ -1,0 +1,22 @@
+div,p { margin:0; padding:0; }
+.chart { margin-bottom: 150px;}
+.node-name { font-weight: bold;}
+
+.nodeExample1 {
+    padding: 13px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    width: 200px;
+    font-family: Tahoma;
+    font-size: 12px;
+}
+
+.nodeExample1 img {
+    margin-right:  10px;
+}
+.nodeExample1 p {
+    text-align: center;
+}

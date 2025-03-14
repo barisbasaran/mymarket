@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta data-require-login="true">
+    <title data-trans="create-country"></title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=2"/>
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lib/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/css/style-f.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="header"></div>
+<div id="adminWarning"></div>
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+
+        <h2 data-trans="create-country"></h2>
+
+        <div class="col-sm-8 px-0">
+
+            <p class="fs-5" data-trans="fill-in-create-country-form"></p>
+
+            <form method="post" class="needs-validation" novalidate>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <div class="invalid-feedback general-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label class="form-label fw-semibold" for="name" data-trans="name"></label></th>
+                        <td>
+                            <input class="form-control" type="text" id="name" maxlength="50">
+                            <div class="invalid-feedback name-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label class="form-label fw-semibold" for="has-state-yes" data-trans="has-state"></label></th>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="hasState" id="has-state-yes" value="true" >
+                                <label class="form-check-label" for="has-state-yes" data-trans="yes"></label>
+                            </div>
+                            <div class="form-check">
+                                <input checked class="form-check-input" type="radio" name="hasState" id="has-state-no" value="false">
+                                <label class="form-check-label" for="has-state-no" data-trans="no"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label class="form-label fw-semibold" for="cities" data-trans="cities"></label></th>
+                        <td>
+                            <textarea class="form-control" id="cities" rows="20" maxlength="100000"></textarea>
+                            <div class="invalid-feedback cities-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a id="submit" href="#" class="btn btn-primary" data-trans="create"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<footer id="footer" class="footer-section"></footer>
+
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/location/js/create-country.js"></script>
+
+</body>
+</html>

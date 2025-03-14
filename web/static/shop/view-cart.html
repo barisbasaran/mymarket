@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title data-trans="shopping-cart"></title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=2"/>
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lib/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/css/style-f.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="header"></div>
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+
+        <h2 data-trans="shopping-cart"></h2>
+
+        <p class="fs-5" id="message" style="color: red;"></p>
+
+        <div class="row align-items-start">
+            <div class="col-sm-8 px-0">
+                <table class="table" id="cart-table">
+                    <thead>
+                    <tr>
+                        <th scope="col" data-trans="product"></th>
+                        <th scope="col" data-trans="name"></th>
+                        <th scope="col" class="text-md-end" data-trans="price"></th>
+                        <th scope="col" class="text-md-end" data-trans="quantity"></th>
+                        <th scope="col" class="text-md-end" data-trans="subtotal"></th>
+                        <th scope="col" class="text-md-end" data-trans="remove"></th>
+                    </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row align-items-start">
+            <div class="col-sm-8 px-0">
+                <a href="javascript:history.back()" class="btn btn-primary" data-trans="back"></a>
+                <a href="javascript:emptyCartConfirm()" class="btn btn-primary" data-trans="empty-cart"></a>
+                <a href="javascript:checkout()" class="btn btn-warning" data-trans="checkout"></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loginForCheckoutModal" tabindex="-1"
+     aria-labelledby="loginForCheckoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="loginForCheckoutModalLabel" data-trans="checkout"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p data-trans="ask-login-for-checkout"></p>
+                <a href="/membership/login.html?page=/shop/checkout.html" class="btn btn-primary" data-trans="yes"></a>
+                <a href="/shop/checkout.html" class="btn btn-primary" data-trans="no"></a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-trans="close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="emptyCartModal" tabindex="-1"
+     aria-labelledby="emptyCartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="emptyCartModalLabel" data-trans="empty-cart"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p data-trans="confirm-empty-cart"></p>
+                <a href="javascript:emptyCart()" class="btn btn-primary" data-trans="yes"></a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-trans="no"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-trans="close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer id="footer" class="footer-section"></footer>
+
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/shop/js/cart.js"></script>
+<script src="/shop/js/view-cart.js"></script>
+
+</body>
+</html>

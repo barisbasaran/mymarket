@@ -1,0 +1,143 @@
+<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid" style="margin-right: 2rem">
+
+        <a class="navbar-brand" href="/">
+            <img src="/img/marketplace.png" alt=""/>
+            <span data-trans="my-market"></span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbarsFurni"
+                aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse navbarsFurni">
+
+            <form class="ms-5 navbar-nav" role="search">
+                <div class="input-group">
+                    <input id="searchQuery" data-trans="search" placeholder="" class="form-control" type="search"
+                           aria-label="Search" size="50" maxlength="50">
+                    <button id="searchButton" class="btn btn-outline-success search-button" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+
+            <ul class="custom-navbar-nav navbar-nav ms-auto">
+                <li class="nav-item hidden-area not-logged-in">
+                    <a class="nav-link login-register" href="/membership/login.html">
+                        <span data-trans="login"></span>
+                        <img src="/images/user.svg" alt="">
+                    </a>
+                </li>
+                <li class="nav-item hidden-area not-logged-in">
+                    <a class="nav-link login-register" href="/shop/view-order-form.html">
+                        <span data-trans="my-orders"></span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="mymarket-navbar navbar-nav logged-in">
+                <li class="nav-item dropdown hidden-area admin">
+                    <a class="nav-link dropdown-toggle member" href="#" role="button" aria-expanded="false"
+                       data-trans="admin"></a>
+                    <ul class="mymarket-navbar-nav dropdown-menu">
+                        <li><a class="dropdown-item" href="/product-category/view-all.html" data-trans="categories"></a></li>
+                        <li><a class="dropdown-item" href="/product-category/view-tree.html" data-trans="category-tree"></a>
+                        </li>
+                        <li><a class="dropdown-item" href="/product-category/create.html" data-trans="create-category"></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/membership/view-members.html" data-trans="viw-members"></a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/location/view-countries.html" data-trans="countries"></a></li>
+                        <li><a class="dropdown-item" href="/location/create-country.html" data-trans="create-country"></a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/store/view-all.html" data-trans="stores"></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown hidden-area logged-in">
+                    <a class="nav-link dropdown-toggle member" href="#" role="button" aria-expanded="false"
+                       data-trans="my-account"></a>
+                    <ul class="mymarket-navbar-nav dropdown-menu">
+                        <li><a class="dropdown-item" href="/membership/view-member.html" data-trans="viw-account"></a></li>
+                        <li><a class="dropdown-item" href="/shop/my-orders.html" data-trans="my-orders"></a></li>
+                        <li><a class="dropdown-item" href="/membership/change-password.html"
+                               data-trans="change-password"></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider store-owner">
+                        </li>
+                        <li><a class="dropdown-item store-owner" href="/product/my-products.html" data-trans="my-products"></a></li>
+                        <li><a class="dropdown-item store-owner" href="/product/create.html" data-trans="create-product"></a></li>
+                        <li>
+                            <hr class="dropdown-divider store-owner">
+                        </li>
+                        <li><a class="dropdown-item store-owner" href="/store/my-stores.html" data-trans="my-stores"></a></li>
+                        <li><a class="dropdown-item store-owner" href="/store/create.html" data-trans="create-store"></a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item logout" href="javascript:logout();">
+                            <span data-trans="logout"></span>
+                            <img src="/img/logout.png" alt="Logout"></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="custom-navbar-nav navbar-nav">
+                <li class="nav-item hidden-area logged-in username">
+                    <span class="navbar-text" id="navbarMemberName"></span>
+                </li>
+                <li class="nav-item language-sel" style="width: 80px;">
+                    <select class="form-select form-select-sm" id="locale-sel">
+                        <option value="tr-TR">TR</option>
+                        <option value="en-US">EN</option>
+                        <option value="sv-SE">SV</option>
+                        <option value="az-AZ">AZ</option>
+                    </select>
+                </li>
+                <li class="hidden-area logged-in not-logged-in">
+                    <a class="nav-link cart" href="/shop/view-cart.html">
+                        <span data-trans="cart"></span>
+                        (<span id="cartNav"></span>)
+                        <img src="/images/cart.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid" style="margin-left: 5rem">
+        <div class="collapse navbar-collapse navbarsFurni">
+            <ul id="navbarProductCategories" style="margin-bottom: 0.3rem"
+                class="custom-navbar-nav navbar-nav"></ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Admin Warning Modal -->
+<div class="modal fade" id="adminWarningModal" tabindex="-1"
+     data-bs-backdrop="static" data-bs-keyboard="false"
+     aria-labelledby="adminWarningModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="adminWarningModalLabel" data-trans="warning"></h1>
+            </div>
+            <div class="modal-body">
+                <p data-trans="admin-warning"></p>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>

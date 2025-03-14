@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title data-trans="checkout"></title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=2"/>
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lib/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/css/style-f.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="header"></div>
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+
+        <h3 data-trans="checkout" style="margin-bottom: 2rem"></h3>
+
+        <p class="fs-5" id="message"></p>
+
+        <div class="row align-items-start">
+            <div class="col-sm-7">
+
+                <h5 data-trans="order-summary"></h5>
+
+                <table class="table" id="cart-table">
+                    <thead>
+                    <tr>
+                        <th scope="col" data-trans="product"></th>
+                        <th scope="col" data-trans="name"></th>
+                        <th scope="col" class="text-md-end" data-trans="price"></th>
+                        <th scope="col" class="text-md-end" data-trans="quantity"></th>
+                        <th scope="col" class="text-md-end" data-trans="subtotal"></th>
+                    </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row align-items-start">
+            <div class="col-sm-12">
+                <form id="checkoutForm" method="post" class="needs-validation" novalidate>
+
+                    <div class="mb-3 row">
+                        <div class="col-sm-12">
+                            <div class="invalid-feedback general-error"></div>
+                        </div>
+                    </div>
+
+                    <h5 data-trans="shipment-details"></h5>
+
+                    <div class="mb-3 row">
+                        <div class="col-sm-6">
+                            <label class="custom_badge" for="shipment-email" data-trans="email"></label>
+                            <input class="form-control custom_input" type="text" id="shipment-email"
+                                   maxlength="100" placeholder="" data-trans="email">
+                            <div class="invalid-feedback shipment-email-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label class="custom_badge" for="shipment-firstName" data-trans="first-name"></label>
+                                    <input class="form-control custom_input" type="text" id="shipment-firstName"
+                                           maxlength="100" placeholder="" data-trans="first-name">
+                                    <div class="invalid-feedback shipment-firstName-error"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="custom_badge" for="shipment-lastName" data-trans="last-name"></label>
+                                    <input class="form-control custom_input" type="text" id="shipment-lastName"
+                                           maxlength="100" placeholder="" data-trans="last-name">
+                                    <div class="invalid-feedback shipment-lastName-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label class="custom_badge" for="shipment-countryId" data-trans="country"></label>
+                                    <select class="form-select custom_input" id="shipment-countryId"></select>
+                                    <div class="invalid-feedback shipment-countryId-error"></div>
+                                </div>
+                                <div class="col-sm-6" id="state" style="display: none">
+                                    <label class="custom_badge" for="shipment-stateId" data-trans="state"></label>
+                                    <select class="form-select custom_input" id="shipment-stateId"></select>
+                                    <div class="invalid-feedback shipment-stateId-error"></div>
+                                </div>
+                                <div class="col-sm-6" id="city">
+                                    <label class="custom_badge" for="shipment-cityId" data-trans="city"></label>
+                                    <select class="form-select custom_input" id="shipment-cityId"></select>
+                                    <div class="invalid-feedback shipment-cityId-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-sm-6">
+                            <label class="custom_badge" for="shipment-addressLine" data-trans="address-line"></label>
+                            <textarea class="form-control custom_input" id="shipment-addressLine" rows="3"
+                                      maxlength="300" placeholder="" data-trans="address-line"></textarea>
+                            <div class="invalid-feedback shipment-addressLine-error"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label class="custom_badge" for="shipment-postalCode" data-trans="postal-code"></label>
+                                    <input class="form-control custom_input" type="text" id="shipment-postalCode"
+                                           maxlength="20" placeholder="" data-trans="postal-code">
+                                    <div class="invalid-feedback shipment-postalCode-error"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="custom_badge" for="shipment-phone" data-trans="phone"></label>
+                                    <input class="form-control custom_input" type="text" id="shipment-phone"
+                                           maxlength="20" placeholder="" data-trans="phone">
+                                    <div class="invalid-feedback shipment-phone-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 data-trans="credit-Card-details"></h5>
+
+                    <div class="mb-3 row">
+                        <div class="col-sm-6">
+                            <label class="custom_badge" for="card-name" data-trans="name-on-card"></label>
+                            <input class="form-control custom_input" type="text" id="card-name"
+                                   maxlength="50" placeholder="" data-trans="name-on-card">
+                            <div class="invalid-feedback card-name-error"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-sm-6">
+                            <label class="custom_badge" for="card-number" data-trans="card-number"></label>
+                            <input class="form-control custom_input" id="card-number" type="tel" inputmode="numeric"
+                                   pattern="[0-9\s]{13,19}" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+                            <div class="invalid-feedback card-number-error"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="custom_badge" for="card-expiryMonth" data-trans="expiration-month"></label>
+                                    <select class="form-select custom_input" id="card-expiryMonth"></select>
+                                    <div class="invalid-feedback card-expiryMonth-error"></div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class="custom_badge" for="card-expiryYear" data-trans="expiration-year"></label>
+                                    <select class="form-select custom_input" id="card-expiryYear"></select>
+                                    <div class="invalid-feedback card-expiryYear-error"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="custom_badge" for="card-cvv" data-trans="cvv"></label>
+                                    <input class="form-control custom_input" style="width: 30%;" type="text"
+                                           id="card-cvv" maxlength="3" placeholder="" data-trans="cvv">
+                                    <div class="invalid-feedback card-cvv-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-sm-12">
+                            <a href="javascript:history.back()" class="btn btn-primary" data-trans="back"></a>
+                            <a href="javascript:submitOrder()" class="btn btn-primary" data-trans="confirm"></a>
+                            <!--
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#confirmSubmitModal" data-trans="confirm"></button>
+                            -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmSubmitModal" tabindex="-1"
+     aria-labelledby="confirmSubmitModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="confirmSubmitModalLabel" data-trans="submit-order"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p data-trans="confirm-submit-order"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-trans="cancel"></button>
+                <button id="confirmSubmit" type="button" class="btn btn-primary" data-trans="confirm"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer id="footer" class="footer-section"></footer>
+
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/country.js"></script>
+<script src="/shop/js/cart.js"></script>
+<script src="/shop/js/checkout.js"></script>
+
+</body>
+</html>

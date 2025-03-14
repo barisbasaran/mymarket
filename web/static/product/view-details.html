@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title id="title"></title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=2"/>
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lib/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/css/style-f.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="header"></div>
+
+<div class="hero2">
+    <div class="container">
+        <div class="d-flex flex-md-column">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" id="category-breadcrumb"></ol>
+            </nav>
+            <div class="intro-excerpt">
+                <h2 id="heading"></h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+
+        <div class="d-flex flex-md-row flex-wrap">
+            <!-- Image carousel -->
+            <div id="myCarousel" class="carousel slide">
+                <!-- Slides -->
+                <div class="carousel-inner"></div>
+                <!-- Slides -->
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden" data-trans="previous"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden" data-trans="next"></span>
+                </button>
+                <!-- Controls -->
+
+                <!-- Thumbnails -->
+                <div class="carousel-indicators" style="margin-bottom: -30px;"></div>
+                <!-- Thumbnails -->
+
+            </div>
+            <!-- Image carousel -->
+
+            <!-- Product details -->
+            <div class="d-flex flex-md-column flex-wrap product-details">
+                <div class="product-comp mb-1">
+                    <p id="description" class="fs-5 text-break text-wrap"></p>
+                    <p class="fs-2 price">
+                        <span id="price-amount"></span>
+                        <span id="price-currency"></span>
+                    </p>
+                </div>
+                <div id="review-rating" class="product-comp"></div>
+                <div class="product-comp">
+                    <h4 id="store"></h4>
+                </div>
+                <div class="product-comp">
+                    <button id="addToCart" class="btn btn-primary hidden-area" data-trans="add-to-cart"></button>
+                </div>
+                <div class="product-comp">
+                    <a id="edit" href="#" class="btn btn-primary hidden-area" data-trans="edit"></a>
+                </div>
+            </div>
+            <!-- Product details -->
+        </div>
+
+        <div style="margin-top: 11rem"></div>
+
+        <!-- Similar products -->
+        <div class="similar-products product-section">
+            <hr>
+            <div class="row">
+                <h3 class="pb-4" data-trans="similar-products"></h3>
+            </div>
+            <div id="similarProducts" class="row"></div>
+        </div>
+        <!-- Similar products -->
+
+        <!-- Product Reviews -->
+        <div class="product-reviews">
+            <hr>
+            <div class="row">
+                <h3 data-trans="product-reviews"></h3>
+            </div>
+            <div id="productReviews" class="d-flex flex-md-column"></div>
+        </div>
+        <!-- Product Reviews -->
+
+    </div>
+</div>
+
+<!-- Added to cart Modal -->
+<div class="modal fade" id="addedToCartModal" tabindex="-1" aria-labelledby="addedToCartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addedToCartModalLabel" data-trans="add-to-cart"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <span data-trans="product-added-to-cart"></span>
+                    <a href="/shop/view-cart.html" data-trans="view-cart"></a>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-trans="close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <a id="imageModalLink" href="#">
+                    <img src="" style="width: 100%;" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer id="footer" class="footer-section"></footer>
+
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/jquery.initialize.min.js"></script>
+<script src="/js/lib/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/product/js/view-details.js"></script>
+
+</body>
+</html>
