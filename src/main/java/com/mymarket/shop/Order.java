@@ -12,12 +12,12 @@ import java.util.List;
 @Value
 @Builder
 public class Order {
-     Long id;
-     String name;
-     Member member;
-     Shipment shipment;
-     List<OrderItem> items;
+    Long id;
+    String name;
+    Member member;
+    Shipment shipment;
+    List<OrderItem> items;
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-     LocalDateTime dateCreated;
-     Price totalPrice;
+    LocalDateTime dateCreated;
+    Price totalPrice;
 }
