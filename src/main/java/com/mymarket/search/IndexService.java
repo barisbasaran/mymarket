@@ -7,14 +7,14 @@ import com.mymarket.productcategory.ProductCategoryService;
 import com.mymarket.store.Store;
 import com.mymarket.store.StoreService;
 import jakarta.annotation.PostConstruct;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 @Slf4j
 public class IndexService {
