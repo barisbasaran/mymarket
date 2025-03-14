@@ -1,13 +1,11 @@
 package com.mymarket.location;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Value;
 
-@Data
+@Value
 @Builder
 public class State {
-
-    private Long id;
-
-    private String name;
+     Long id;
+     String name;
 }
