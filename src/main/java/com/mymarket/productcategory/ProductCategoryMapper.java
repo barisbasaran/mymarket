@@ -1,10 +1,10 @@
 package com.mymarket.productcategory;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductCategoryMapper {
 
     public ProductCategoryEntity toEntity(ProductCategory productCategory) {

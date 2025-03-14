@@ -5,7 +5,7 @@ import com.mymarket.product.ProductMapper;
 import com.mymarket.product.ProductNotFoundException;
 import com.mymarket.product.ProductRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.Arrays;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Slf4j
 @Transactional
 public class ProductImageService {

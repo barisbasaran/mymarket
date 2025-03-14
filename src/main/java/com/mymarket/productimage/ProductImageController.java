@@ -1,7 +1,7 @@
 package com.mymarket.productimage;
 
 import com.mymarket.product.Product;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,10 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 @Slf4j
 @RestController
 @RequestMapping("/products/{productId}/images")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductImageController {
 
-    private ProductImageService productImageService;
+    private final ProductImageService productImageService;
 
     @PostMapping
     @PreAuthorize("hasRole('STORE_OWNER')")

@@ -1,7 +1,7 @@
 package com.mymarket.location;
 
 import com.mymarket.web.ApplicationLocaleHolder;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CountryMapper {
 
     private final CityMapper cityMapper;

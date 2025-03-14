@@ -3,7 +3,7 @@ package com.mymarket.store;
 import com.mymarket.membership.member.MemberNotLoggedInException;
 import com.mymarket.membership.member.MemberService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/stores")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class StoreController {
 
     private final StoreService storeService;

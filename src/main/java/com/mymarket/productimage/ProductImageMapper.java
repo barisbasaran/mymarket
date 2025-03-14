@@ -1,10 +1,10 @@
 package com.mymarket.productimage;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductImageMapper {
 
     public ProductImageEntity toEntity(ProductImage productImage) {

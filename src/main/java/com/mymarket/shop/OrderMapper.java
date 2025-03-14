@@ -4,13 +4,13 @@ import com.mymarket.membership.member.MemberMapper;
 import com.mymarket.product.Currency;
 import com.mymarket.product.Price;
 import com.mymarket.product.ProductMapper;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class OrderMapper {
 
     private final MemberMapper memberMapper;

@@ -1,11 +1,11 @@
 package com.mymarket.membership.address;
 
 import com.mymarket.location.CountryService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class AddressMapper {
 
     private final CountryService countryService;

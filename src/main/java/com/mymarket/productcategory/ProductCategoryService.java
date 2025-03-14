@@ -4,7 +4,7 @@ import com.mymarket.product.Product;
 import com.mymarket.product.ProductService;
 import com.mymarket.web.error.ApplicationException;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import java.util.List;
 import static java.util.Comparator.comparing;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Slf4j
 @Transactional
 public class ProductCategoryService {

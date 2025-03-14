@@ -1,9 +1,9 @@
 package com.mymarket.membership.login;
 
-import com.mymarket.membership.member.MemberService;
 import com.mymarket.membership.member.MemberNotLoggedInException;
+import com.mymarket.membership.member.MemberService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +16,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/members/self/password")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PasswordController {
 
     private final MemberService memberService;
