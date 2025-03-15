@@ -95,10 +95,7 @@ public class ProductService {
         validateProduct(product);
         // clean any potential id values set
         product.setId(null);
-        product.getImages().forEach(image -> image.setId(null));
-
         var productEntity = productMapper.toEntity(product);
-        productEntity.getImages().forEach(image -> image.setProduct(productEntity));
         var createdProductEntity = productRepository.save(productEntity);
 
         var createdProduct = productMapper.toDomain(createdProductEntity);
