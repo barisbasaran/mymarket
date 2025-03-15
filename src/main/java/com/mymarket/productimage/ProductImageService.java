@@ -21,6 +21,7 @@ public class ProductImageService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
     private final ProductImageFileService productImageFileService;
+    private final ProductImageRepository productImageRepository;
 
     public Product updateProductImages(Long productId, MultipartFile[] files) {
         var productEntity = productRepository.findById(productId)
@@ -56,6 +57,16 @@ public class ProductImageService {
 
         log.info("Deleted image {} for product {}", image.getId(), productId);
 
+        return productMapper.toDomain(productEntity);
+    }
+
+    public Product setCoverImage(Long productId, Long imageId) {
+        productImageRepository.findAll().forEach(productImageEntity -> {
+            productImageEntity.setCoverImage(productImageEntity.getId().equals(imageId));
+            productImageRepository.save(productImageEntity);
+        });
+        var productEntity = productRepository.findById(productId)
+            .orElseThrow(ProductNotFoundException::new);
         return productMapper.toDomain(productEntity);
     }
 }

@@ -37,4 +37,13 @@ public class ProductImageController {
     ) {
         return productImageService.deleteProductImage(productId, imageId);
     }
+
+    @PostMapping("{imageId}/cover")
+    @PreAuthorize("hasRole('STORE_OWNER')")
+    public Product setCoverImage(
+        @PathVariable Long productId,
+        @PathVariable Long imageId
+    ) {
+        return productImageService.setCoverImage(productId, imageId);
+    }
 }

@@ -28,6 +28,8 @@ public class ProductImageEntity {
 
     private String url;
 
+    private boolean coverImage;
+
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private ProductEntity product;

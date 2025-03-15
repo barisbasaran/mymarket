@@ -14,6 +14,7 @@ public class ProductImageMapper {
         return ProductImageEntity.builder()
             .id(productImage.getId())
             .url(productImage.getUrl())
+            .coverImage(productImage.isCoverImage())
             .build();
     }
 
@@ -24,6 +25,7 @@ public class ProductImageMapper {
         return ProductImage.builder()
             .id(productImageEntity.getId())
             .url(productImageEntity.getUrl())
+            .coverImage(productImageEntity.isCoverImage())
             .build();
     }
 }

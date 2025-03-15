@@ -15,4 +15,6 @@ public class ProductImage {
 
     @NotBlank
     private String url;
+
+    private boolean coverImage;
 }
