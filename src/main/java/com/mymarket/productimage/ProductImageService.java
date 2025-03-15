@@ -63,7 +63,7 @@ public class ProductImageService {
     }
 
     public Product setCoverImage(Long productId, Long imageId) {
-        productImageRepository.findAll().forEach(productImageEntity -> {
+        productImageRepository.findByProductId(productId).forEach(productImageEntity -> {
             productImageEntity.setCoverImage(productImageEntity.getId().equals(imageId));
             productImageRepository.save(productImageEntity);
         });
