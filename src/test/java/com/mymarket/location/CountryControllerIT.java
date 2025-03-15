@@ -4,13 +4,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
-
-import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
@@ -28,13 +25,15 @@ class CountryControllerIT {
 
     @Autowired
     private CountryService countryService;
+    @Autowired
+    private CountryRepository countryRepository;
 
     @Autowired
     private TestRestTemplate template;
 
     @Test
     public void getCountries() {
-        LocaleContextHolder.setLocale(Locale.US);
+        countryRepository.deleteAll();
         var createCountry = CreateCountry.builder()
             .name("country.turkey")
             .hasState(false)
@@ -57,7 +56,7 @@ class CountryControllerIT {
 
     @Test
     public void getCountry() {
-        LocaleContextHolder.setLocale(Locale.US);
+        countryRepository.deleteAll();
         var createCountry = CreateCountry.builder()
             .name("country.germany")
             .hasState(false)
