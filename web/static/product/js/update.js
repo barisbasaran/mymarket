@@ -58,9 +58,11 @@ function fetchProduct(p) {
             $('#currentImages').append(
                 `<div class="col-sm-3" style="margin-bottom: 1.5rem;">
                      <img src="${image.url}" alt="" style="height: 75%; width: 75%" />
-                     <a href="javascript:deleteImage(${product.id}, ${image.id})" class="btn btn-primary">X</a>
-                     <a style="display: ${image.coverImage ? 'none' : 'block'}" href="javascript:setCoverImage(${product.id}, ${image.id})" 
-                         class="btn btn-secondary"><img src="/img/cover_img.png" width="30px" height="30px"></a>
+                     <button onclick="deleteImage(event, ${product.id}, ${image.id})" class="btn btn-primary">X</button>
+                     <button style="display: ${image.coverImage ? 'none' : 'block'}" 
+                         onclick="setCoverImage(event, ${product.id}, ${image.id})" class="btn btn-secondary">
+                         <img src="/img/cover_img.png" width="30px" height="30px">                     
+                     </button>
                  </div>`);
         });
     }, (xhr) => {
@@ -92,7 +94,8 @@ function updateProduct(p) {
     });
 }
 
-function deleteImage(productId, imageId) {
+function deleteImage(event, productId, imageId) {
+    event.preventDefault();
     doDeleteRequest(`/service/products/${productId}/images/${imageId}`, (data) => {
         window.location.href = "/product/update.html?p=" + productId;
     }, (xhr) => {
@@ -100,7 +103,8 @@ function deleteImage(productId, imageId) {
     });
 }
 
-function setCoverImage(productId, imageId) {
+function setCoverImage(event, productId, imageId) {
+    event.preventDefault();
     doPostRequest(`/service/products/${productId}/images/${imageId}/cover`, '', (data) => {
         window.location.href = "/product/update.html?p=" + productId;
     }, (xhr) => {
