@@ -8,6 +8,7 @@ $(document).ready(function () {
     });
 
     $("#addProduct").attr("href", "/product/create.html?s=" + s);
+    $("#viewProducts").attr("href", "/store/view-details.html?s=" + s);
 });
 
 function fetchStore(s) {
