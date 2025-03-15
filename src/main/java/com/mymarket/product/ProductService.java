@@ -3,7 +3,6 @@ package com.mymarket.product;
 import com.mymarket.productcategory.BreadcrumbService;
 import com.mymarket.productcategory.ProductCategoryHierarchyService;
 import com.mymarket.productcategory.ProductCategoryNotFoundException;
-import com.mymarket.productimage.ProductImage;
 import com.mymarket.review.Review;
 import com.mymarket.review.ReviewService;
 import com.mymarket.review.ReviewSummary;
@@ -14,7 +13,6 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -68,8 +66,6 @@ public class ProductService {
             .summaryStatistics();
         var product = productRepository.findById(productId).map(productMapper::toDomain)
             .orElseThrow(ProductNotFoundException::new);
-        var images = product.getImages().stream().sorted(Comparator.comparing(ProductImage::isCoverImage).reversed()).toList();
-        product.setImages(images);
         return ProductDetails.builder()
             .product(product)
             .breadcrumb(breadcrumbService.getBreadcrumb(product.getProductCategory()))
