@@ -28,10 +28,17 @@ class EmailServiceIT {
     private EmailRepository emailRepository;
 
     @Test
-    public void testFindAll() {
+    public void findAll() {
         emailService.saveEmailRequest("myemail@gmail.com", "My Email", "Hello World!");
 
         var emailEntities = emailRepository.findAll();
         assertThat(emailEntities.size()).isEqualTo(1);
+        var emailEntity = emailEntities.getFirst();
+        assertThat(emailEntity.getRecipient()).isEqualTo("myemail@gmail.com");
+        assertThat(emailEntity.getSubject()).isEqualTo("My Email");
+        assertThat(emailEntity.getContent()).isEqualTo("Hello World!");
+        assertThat(emailEntity.getId()).isNotNull();
+        assertThat(emailEntity.getCreated()).isNotNull();
+        assertThat(emailEntity.getRetry()).isEqualTo(0L);
     }
 }
