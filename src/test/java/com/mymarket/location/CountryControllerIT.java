@@ -33,7 +33,7 @@ class CountryControllerIT {
     private TestRestTemplate template;
 
     @Test
-    public void getHello() {
+    public void getCountries() {
         LocaleContextHolder.setLocale(Locale.US);
         var createCountry = CreateCountry.builder()
             .name("country.turkey")
@@ -49,8 +49,29 @@ class CountryControllerIT {
         var country = countries[0];
         assertThat(country.getName()).isEqualTo("Turkey");
         assertThat(country.getCities()).hasSize(2);
-        assertThat(country.getCities()).contains(City.builder().id(1L).name("Istanbul").build());
-        assertThat(country.getCities()).contains(City.builder().id(2L).name("Ankara").build());
+        assertThat(country.getCities().stream().filter(it -> it.getName().equals("Istanbul")).findFirst()).isPresent();
+        assertThat(country.getCities().stream().filter(it -> it.getName().equals("Ankara")).findFirst()).isPresent();
+        assertThat(country.isHasState()).isFalse();
+        assertThat(country.getStates()).isEmpty();
+    }
+
+    @Test
+    public void getCountry() {
+        LocaleContextHolder.setLocale(Locale.US);
+        var createCountry = CreateCountry.builder()
+            .name("country.germany")
+            .hasState(false)
+            .cities("Berlin\nMunich")
+            .build();
+        var countryCreated = countryService.createCountry(createCountry);
+
+        var response = template.getForEntity("/locations/countries/" + countryCreated.getId(), Country.class);
+        var country = response.getBody();
+        assertThat(country).isNotNull();
+        assertThat(country.getName()).isEqualTo("Germany");
+        assertThat(country.getCities()).hasSize(2);
+        assertThat(country.getCities().stream().filter(it -> it.getName().equals("Berlin")).findFirst()).isPresent();
+        assertThat(country.getCities().stream().filter(it -> it.getName().equals("Munich")).findFirst()).isPresent();
         assertThat(country.isHasState()).isFalse();
         assertThat(country.getStates()).isEmpty();
     }
