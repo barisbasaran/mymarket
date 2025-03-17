@@ -2,16 +2,16 @@ package com.mymarket.membership.address;
 
 
 import com.mymarket.membership.member.Member;
+import com.mymarket.membership.member.MemberNotFoundException;
 import com.mymarket.membership.member.MemberRepository;
 import com.mymarket.web.error.ApplicationException;
-import com.mymarket.membership.member.MemberNotFoundException;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Slf4j
 @Transactional
 public class AddressService {

@@ -2,7 +2,7 @@ package com.mymarket.membership.member;
 
 import com.mymarket.membership.login.PasswordService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ import java.net.URI;
 @Slf4j
 @RestController
 @RequestMapping("/members/self")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MemberController {
 
     private final MemberService memberService;

@@ -6,8 +6,8 @@ import com.mymarket.membership.member.MemberService;
 import com.mymarket.store.StoreValidator;
 import com.mymarket.web.error.ApplicationValidator;
 import jakarta.validation.Validator;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -16,7 +16,7 @@ import org.springframework.validation.BindingResult;
 import java.util.Map;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Slf4j
 public class ProductValidator implements ApplicationValidator<Product> {
 

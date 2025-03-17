@@ -1,11 +1,11 @@
 package com.mymarket.review;
 
 import com.mymarket.shop.OrderMapper;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ReviewMapper {
 
     private final OrderMapper orderMapper;

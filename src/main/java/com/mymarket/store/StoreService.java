@@ -2,7 +2,8 @@ package com.mymarket.store;
 
 import com.mymarket.product.ProductService;
 import com.mymarket.web.error.ApplicationException;
-import lombok.AllArgsConstructor;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,8 @@ import java.util.List;
 
 @Service
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
+@Transactional
 public class StoreService {
 
     private final StoreRepository storeRepository;

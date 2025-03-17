@@ -1,7 +1,7 @@
 package com.mymarket.web.error;
 
 import com.mymarket.web.ApplicationLocaleHolder;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpHeaders;
@@ -26,7 +26,7 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @ControllerAdvice
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Slf4j
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 

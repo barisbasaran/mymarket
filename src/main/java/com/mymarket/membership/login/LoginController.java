@@ -3,7 +3,7 @@ package com.mymarket.membership.login;
 import com.mymarket.membership.member.MemberService;
 import com.mymarket.web.jwt.JwtService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/login")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class LoginController {
 
     private final AuthenticationManager authenticationManager;

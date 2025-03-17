@@ -2,7 +2,7 @@ package com.mymarket.membership.address;
 
 import com.mymarket.membership.member.MemberNotLoggedInException;
 import com.mymarket.membership.member.MemberService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ import java.net.URI;
 @Slf4j
 @RestController
 @RequestMapping("/addresses/self")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class AddressController {
 
     private final MemberService memberService;

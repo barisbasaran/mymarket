@@ -7,14 +7,13 @@ import com.mymarket.productcategory.ProductCategoryService;
 import com.mymarket.store.Store;
 import com.mymarket.store.StoreService;
 import jakarta.annotation.PostConstruct;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
-@AllArgsConstructor
 @Service
 @Slf4j
 public class IndexService {
@@ -24,9 +23,28 @@ public class IndexService {
     private final ProductService productService;
     private final ProductCategoryService productCategoryService;
     private final StoreService storeService;
+    private final boolean indexAtStartup;
+
+    public IndexService(
+        ElasticsearchOperations operations, SProductRepository sProductRepository, ProductService productService,
+        ProductCategoryService productCategoryService, StoreService storeService,
+        @Value("${search.index-at-startup}") boolean indexAtStartup
+    ) {
+        this.operations = operations;
+        this.sProductRepository = sProductRepository;
+        this.productService = productService;
+        this.productCategoryService = productCategoryService;
+        this.storeService = storeService;
+        this.indexAtStartup = indexAtStartup;
+    }
 
     @PostConstruct
     public void indexProducts() {
+        if (!indexAtStartup) {
+            log.info("Skipping indexing");
+            return;
+        }
+        log.info("Starting indexing");
         operations.indexOps(SProduct.class).delete();
         operations.indexOps(SProduct.class).create();
 
@@ -41,6 +59,7 @@ public class IndexService {
         var stores = storeService.getAllStores().stream()
             .map(this::mapStore).toList();
         sProductRepository.saveAll(stores);
+        log.info("Completed indexing");
     }
 
     public void updateProduct(Product product) {

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let pc = new URLSearchParams(window.location.search).get('pc');
+    let pc = getQueryParam('pc');
 
     $("#sidebar").load("/product-category/sidebar.html", function () {
         populateTranslations("#sidebar *");

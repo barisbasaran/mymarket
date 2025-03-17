@@ -1,6 +1,6 @@
 services:
   elasticsearch:
-    image: elasticsearch:8.17.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.1
     ports:
       - "9201:9200"
     environment:
@@ -44,7 +44,6 @@ services:
       EMAIL_PASSWORD: ${EMAIL_PASSWORD}
       SEARCH_USERNAME: ${SEARCH_USERNAME}
       SEARCH_PASSWORD: ${SEARCH_PASSWORD}
-      SEARCH_API_KEY: ${SEARCH_API_KEY}
       SECURITY_JWT_SECRET_KEY: ${SECURITY_JWT_SECRET_KEY}
     depends_on:
       elasticsearch:

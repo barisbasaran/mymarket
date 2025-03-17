@@ -11,8 +11,9 @@ function changePassword() {
         password2: $("#password2").val()
     }, (data) => {
         translateKeys(["password-changed"], (translations) => {
-            $("#message").html(translations["password-changed"]);
-            $("#message").attr("style", "color:green;");
+            let $message = $("#message");
+            $message.html(translations["password-changed"]);
+            $message.attr("style", "color:green;");
             scrollToTop();
         });
         $("#changePasswordForm").hide();

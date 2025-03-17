@@ -1,13 +1,13 @@
 package com.mymarket.productcategory;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BreadcrumbService {
 
     public List<ProductCategory> getBreadcrumb(ProductCategory productCategory) {

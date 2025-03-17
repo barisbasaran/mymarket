@@ -2,13 +2,13 @@ package com.mymarket.store;
 
 import com.mymarket.product.ProductService;
 import com.mymarket.web.error.ApplicationException;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class StoreValidator {
 
     private final StoreRepository storeRepository;

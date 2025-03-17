@@ -1,21 +1,16 @@
 package com.mymarket.location;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Value;
 
 import java.util.List;
 
-@Data
+@Value
 @Builder
 public class Country {
-
-    private Long id;
-
-    private String name;
-
-    private List<City> cities;
-
-    private boolean hasState;
-
-    private List<State> states;
+    Long id;
+    String name;
+    List<City> cities;
+    boolean hasState;
+    List<State> states;
 }

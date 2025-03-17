@@ -1,9 +1,11 @@
 package com.mymarket.location;
 
 import jakarta.validation.constraints.Size;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class CreateCountry {
 
     @Size(min = 1, max = 50, message = "{error.location.country.name}")

@@ -1,7 +1,7 @@
 package com.mymarket.localization;
 
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,10 +13,10 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/localization/translations")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class TranslationController {
 
-    private TranslationService translationService;
+    private final TranslationService translationService;
 
     @PostMapping
     public Map<String, String> translate(@Valid @RequestBody TranslationForm translationForm) {

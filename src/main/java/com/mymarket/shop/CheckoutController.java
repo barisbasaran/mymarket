@@ -1,7 +1,7 @@
 package com.mymarket.shop;
 
 import com.mymarket.membership.member.MemberService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import java.net.URI;
 @Slf4j
 @RestController
 @RequestMapping("/shop/checkout")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CheckoutController {
 
     private final OrderService orderService;

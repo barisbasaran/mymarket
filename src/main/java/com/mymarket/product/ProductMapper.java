@@ -1,15 +1,17 @@
 package com.mymarket.product;
 
-import com.mymarket.productimage.ProductImageMapper;
 import com.mymarket.productcategory.ProductCategoryMapper;
+import com.mymarket.productimage.ProductImage;
+import com.mymarket.productimage.ProductImageMapper;
 import com.mymarket.store.StoreMapper;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductMapper {
 
     private final ProductImageMapper productImageMapper;
@@ -38,6 +40,10 @@ public class ProductMapper {
         if (productEntity == null) {
             return null;
         }
+        List<ProductImage> images = productEntity.getImages() != null ? productEntity.getImages().stream()
+            .map(productImageMapper::toDomain)
+            .sorted(Comparator.comparing(ProductImage::isCoverImage).reversed())
+            .toList() : List.of();
         return Product.builder()
             .id(productEntity.getId())
             .productCategory(productCategoryMapper.toDomain(productEntity.getProductCategory()))
@@ -49,7 +55,7 @@ public class ProductMapper {
             .price(productEntity.getPriceAmount() != null ? Price.builder()
                 .amount(productEntity.getPriceAmount())
                 .currency(productEntity.getPriceCurrency()).build() : null)
-            .images(productEntity.getImages() != null ? productEntity.getImages().stream().map(productImageMapper::toDomain).toList() : List.of())
+            .images(images)
             .build();
     }
 }

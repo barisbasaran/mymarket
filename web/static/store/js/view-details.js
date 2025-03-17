@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let s = new URLSearchParams(window.location.search).get('s');
+    let s = getQueryParam('s');
 
     fetchStoreDetails(s);
 });

@@ -2,6 +2,5 @@ package com.mymarket.search;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-interface SProductRepository extends ElasticsearchRepository<SProduct, String> {
-
+public interface SProductRepository extends ElasticsearchRepository<SProduct, String> {
 }

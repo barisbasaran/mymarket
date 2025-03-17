@@ -1,11 +1,10 @@
 package com.mymarket.membership.login;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Value;
 
-@Data
+@Value
 @Builder
 public class LoginResponse {
-
-    private String token;
+    String token;
 }

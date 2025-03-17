@@ -123,11 +123,12 @@ function submitOrder() {
     }, (order) => {
         $("#checkoutForm").hide();
         translateKeys(["order-been-placed"], (translations) => {
-            $("#message").html(
+            let $message = $("#message");
+            $message.html(
                 `<p>${translations["order-been-placed"]} 
                            <a href="/shop/view-order.html?o=${order.name}">${order.name}</a>.
                        </p>`);
-            $("#message").attr("style", "color:green;");
+            $message.attr("style", "color:green;");
             scrollToTop();
         });
     }, (xhr) => {

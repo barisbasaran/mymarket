@@ -2,7 +2,7 @@ package com.mymarket.productcategory;
 
 import com.mymarket.search.IndexService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -22,12 +22,12 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/admin/product-categories")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductCategoryAdminController {
 
-    private ProductCategoryService productCategoryService;
-    private ProductCategoryHierarchyService productCategoryHierarchyService;
-    private IndexService indexService;
+    private final ProductCategoryService productCategoryService;
+    private final ProductCategoryHierarchyService productCategoryHierarchyService;
+    private final IndexService indexService;
 
     @GetMapping
     public List<ProductCategory> getAllProductCategories() {

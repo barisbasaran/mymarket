@@ -6,7 +6,7 @@ import com.mymarket.membership.member.MemberService;
 import com.mymarket.search.IndexService;
 import com.mymarket.store.StoreValidator;
 import com.mymarket.web.error.ApplicationException;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -30,7 +30,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/products")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductController {
 
     private final StoreValidator storeValidator;

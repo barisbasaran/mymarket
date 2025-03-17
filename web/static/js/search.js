@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    let q = new URLSearchParams(window.location.search).get('q');
-    let page = new URLSearchParams(window.location.search).get('page');
+    let q = getQueryParam('q');
+    let page = getQueryParam('page');
     doSearch(q, page ? parseInt(page) : 0);
 });
 

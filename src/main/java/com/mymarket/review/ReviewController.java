@@ -2,7 +2,7 @@ package com.mymarket.review;
 
 import com.mymarket.shop.OrderService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +19,11 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/reviews")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ReviewController {
 
-    private ReviewService reviewService;
-    private OrderService orderService;
+    private final ReviewService reviewService;
+    private final OrderService orderService;
 
     @GetMapping("/products/{productId}")
     public List<Review> getProductReviews(@PathVariable Long productId) {

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let s = new URLSearchParams(window.location.search).get('s');
+    let s = getQueryParam('s');
 
     fetchStore(s);
 
@@ -8,6 +8,7 @@ $(document).ready(function () {
     });
 
     $("#addProduct").attr("href", "/product/create.html?s=" + s);
+    $("#viewProducts").attr("href", "/store/view-details.html?s=" + s);
 });
 
 function fetchStore(s) {

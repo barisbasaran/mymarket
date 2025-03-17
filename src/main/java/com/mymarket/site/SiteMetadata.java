@@ -2,21 +2,17 @@ package com.mymarket.site;
 
 import com.mymarket.productcategory.ProductCategory;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Value;
 
 import java.util.List;
 
-@Data
+@Value
 @Builder
 public class SiteMetadata {
-
-    private List<ProductCategory> productCategories;
-
-    private boolean loggedIn;
-
-    private String memberName;
-
-    private boolean admin;
-
-    private boolean storeOwner;
+    List<ProductCategory> productCategories;
+    boolean loggedIn;
+    String memberName;
+    boolean admin;
+    boolean storeOwner;
+    List<String> supportedLocales;
 }

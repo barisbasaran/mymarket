@@ -32,9 +32,15 @@ function submitReview(orderName, itemId, rating) {
         }
     }, (review) => {
         $("#reviewForm").hide();
-        translateKeys(["review-been-placed"], (translations) => {
+        translateKeys(["review-been-placed", "view-product"], (translations) => {
             let $message = $("#message");
-            $message.html(`<p>${translations["review-been-placed"]}</p>`);
+            $message.html(`
+                       <p>
+                           <span>${translations["review-been-placed"]}</span>
+                           <a href="/product/view-details.html?p=${review.orderItem.product.id}&r=${review.id}">
+                               ${translations["view-product"]}
+                           </a>
+                       </p>`);
             $message.attr("style", "color:green;");
             scrollToTop();
         });

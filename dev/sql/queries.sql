@@ -153,3 +153,7 @@ update store set member_id=45;
 select * from store;
 
 select id, store_id from product;
+
+update product_image set cover_image=false where id=185;;
+select * from product_image where id=185;
+

@@ -1,8 +1,8 @@
 package com.mymarket.shop;
 
-import com.mymarket.membership.member.MemberService;
 import com.mymarket.membership.member.MemberNotLoggedInException;
-import lombok.AllArgsConstructor;
+import com.mymarket.membership.member.MemberService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +14,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/shop/orders")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class OrderController {
 
     private final OrderService orderService;

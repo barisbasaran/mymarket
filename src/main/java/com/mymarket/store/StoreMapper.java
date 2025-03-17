@@ -1,11 +1,11 @@
 package com.mymarket.store;
 
 import com.mymarket.membership.member.MemberMapper;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class StoreMapper {
 
     private final MemberMapper memberMapper;

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let token = new URLSearchParams(window.location.search).get('token');
+    let token = getQueryParam('token');
 
     $("#submit").on('click', function () {
         resetPassword(token);
@@ -13,8 +13,9 @@ function resetPassword(token) {
         token: token
     }, (data) => {
         translateKeys(["password-been-reset"], (translations) => {
-            $("#message").html(translations["password-been-reset"]);
-            $("#message").attr("style", "color:green;");
+            let $message = $("#message");
+            $message.html(translations["password-been-reset"]);
+            $message.attr("style", "color:green;");
             scrollToTop();
         });
         $("#resetPasswordForm").hide();

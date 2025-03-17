@@ -1,9 +1,10 @@
 $(document).ready(function () {
-    let p = new URLSearchParams(window.location.search).get('p');
+    let p = getQueryParam('p');
+    let r = getQueryParam('r');
 
     $('#edit').attr('href', '/product/update.html?p=' + p);
 
-    fetchProductDetails(p);
+    fetchProductDetails(p, r);
 
     $('#addToCart').click(function () {
         addToCart(p);
@@ -11,7 +12,7 @@ $(document).ready(function () {
     });
 });
 
-function fetchProductDetails(p) {
+function fetchProductDetails(p, r) {
     doGetRequest('/service/products/' + p + '/details', (productDetails) => {
         let product = productDetails.product;
         $('#title').html(product.name);
@@ -37,7 +38,7 @@ function fetchProductDetails(p) {
 
         populateSimilarProducts(productDetails.similarProducts);
 
-        populateProductReviews(productDetails.reviews);
+        populateProductReviews(productDetails.reviews, r);
 
         populateProductRating(productDetails.reviewSummary);
     });
@@ -111,17 +112,23 @@ function populateSimilarProducts(similarProducts) {
     });
 }
 
-function populateProductReviews(reviews) {
+function populateProductReviews(reviews, r) {
     if (reviews.length > 0) {
         $('.product-reviews').show();
     }
     reviews.forEach(review => {
         $('#productReviews').append(
-            `<div class="mt-3 border-bottom">
+            `<div class="mt-3 border-bottom" id="review-${review.id}">
                 <h6 class="mb-3">${getReviewStars(review.rating, 0, 'ratings-medium')}</h6>         
                 <h6>${review.comment}</h6>         
              </div>`);
     });
+    if (r) {
+        let reviewBlock = document.getElementById("review-" + r);
+        if (reviewBlock) {
+            window.scrollTo(0, reviewBlock.offsetTop);
+        }
+    }
 }
 
 function populateProductRating(reviewSummary) {

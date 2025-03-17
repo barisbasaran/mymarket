@@ -1,7 +1,7 @@
 package com.mymarket.location;
 
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +15,10 @@ import java.net.URI;
 @Slf4j
 @RestController
 @RequestMapping("/admin/locations/countries")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CountryAdminController {
 
-    private CountryService countryService;
+    private final CountryService countryService;
 
     @PostMapping
     @SneakyThrows

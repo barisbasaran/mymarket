@@ -1,7 +1,7 @@
 package com.mymarket.search;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/search")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SearchController {
 
-    private SearchService searchService;
+    private final SearchService searchService;
 
     @GetMapping
     public SearchResult search(

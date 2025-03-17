@@ -12,8 +12,9 @@ function forgotPassword() {
         email: $("#email").val()
     }, (data) => {
         translateKeys(["password-reset-link"], (translations) => {
-            $("#message").html(translations["password-reset-link"]);
-            $("#message").attr("style", "color:green;");
+            let $message = $("#message");
+            $message.html(translations["password-reset-link"]);
+            $message.attr("style", "color:green;");
             scrollToTop();
         });
         spinner.hide();

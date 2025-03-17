@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let co = new URLSearchParams(window.location.search).get('co');
+    let co = getQueryParam('co');
 
     fetchCountry(co);
 });

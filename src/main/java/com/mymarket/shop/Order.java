@@ -4,27 +4,20 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mymarket.membership.member.Member;
 import com.mymarket.product.Price;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Value;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
+@Value
 @Builder
 public class Order {
-
-    private Long id;
-
-    private String name;
-
-    private Member member;
-
-    private Shipment shipment;
-
-    private List<OrderItem> items;
-
+    Long id;
+    String name;
+    Member member;
+    Shipment shipment;
+    List<OrderItem> items;
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-    private LocalDateTime dateCreated;
-
-    private Price totalPrice;
+    LocalDateTime dateCreated;
+    Price totalPrice;
 }

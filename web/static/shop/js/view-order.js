@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let o = new URLSearchParams(window.location.search).get('o');
+    let o = getQueryParam('o');
 
     fetchOrder(o);
 });

@@ -20,9 +20,9 @@ function register() {
             role: $("#role").val() ? $("#role").val() : null
         }, (data) => {
             translateKeys(["check-email-to-verify"], (translations) => {
-                let message = $("#message");
-                message.html(translations["check-email-to-verify"]);
-                message.attr("style", "color:green;");
+                let $message = $("#message");
+                $message.html(translations["check-email-to-verify"]);
+                $message.attr("style", "color:green;");
                 scrollToTop();
             });
             spinner.hide();

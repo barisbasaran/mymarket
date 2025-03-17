@@ -9,7 +9,6 @@ let dataTablesTranslationsMap = {
 $(document).ready(function () {
     $("#header").load("/common/header.html", function () {
         $("#footer").load("/common/footer.html", function () {
-            populateLocale();
             populateTranslations();
             populateTopNav();
             populateSearchBar();
@@ -18,15 +17,19 @@ $(document).ready(function () {
 });
 
 function populateSearchBar() {
-    let q = new URLSearchParams(window.location.search).get('q');
+    let q = getQueryParam('q');
+    let $searchQuery = $('#searchQuery');
     if (q) {
-        $("#searchQuery").val(q);
+        $searchQuery.val(q);
     }
-    $('#searchQuery').on('keypress', function (e) {
+    $searchQuery.on('keypress', function (e) {
         if (e.which === 13) {
             e.preventDefault();
             goToSearch();
         }
+    });
+    $searchQuery.on('change', function () {
+        goToSearch();
     });
     $("#searchButton").on('click', function (e) {
         e.preventDefault();
@@ -52,12 +55,16 @@ function getAndSetLocale() {
     return locale;
 }
 
-function populateLocale() {
-    $("#locale-sel").on('change', function () {
+function populateLocale(supportedLocales) {
+    let $localeSel = $("#locale-sel");
+    supportedLocales.forEach(locale => {
+        $localeSel.append(`<option value="${locale}">${locale.substring(0, 2).toLocaleUpperCase()}</option>`);
+    });
+    $localeSel.on('change', function () {
         localStorage.setItem("locale", this.value);
         window.location.reload();
     });
-    $("#locale-sel").val(getAndSetLocale());
+    $localeSel.val(getAndSetLocale());
 }
 
 function populateTranslations(selector = "*") {
@@ -91,6 +98,7 @@ function showAdminWarning() {
 
 function populateTopNav() {
     doGetRequest('/service/sites/metadata', (siteMetadata) => {
+        populateLocale(siteMetadata.supportedLocales);
         populateProductCategoryNav(siteMetadata.productCategories);
         if (siteMetadata.loggedIn) {
             loggedIn = true;
@@ -225,6 +233,10 @@ function getReviewStars(rating, count, ratingClass) {
                 <i class="fa fa-star ${rating > 4 ? 'rating-color' : ''} "></i>
                 ${count > 0 ? '<span>(' + count + ')</span>' : ''}
             </div>`;
+}
+
+function getQueryParam(p) {
+    return new URLSearchParams(window.location.search).get(p);
 }
 
 function getAuthHeaders(csrfToken = '') {

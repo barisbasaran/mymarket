@@ -2,7 +2,7 @@ package com.mymarket.web;
 
 import com.mymarket.web.jwt.JwtAuthTokenFilter;
 import com.mymarket.web.jwt.JwtUnauthorizedHandler;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,7 +25,7 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class WebSecurityConfig {
 
     private static final List<String> CSRF_PATHS = List.of("/login", "/members/self/register");

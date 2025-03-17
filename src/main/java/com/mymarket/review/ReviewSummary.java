@@ -6,8 +6,6 @@ import lombok.Value;
 @Value
 @Builder
 public class ReviewSummary {
-
     int rating;
-
     long count;
 }

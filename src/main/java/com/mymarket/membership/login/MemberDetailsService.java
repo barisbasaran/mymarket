@@ -1,9 +1,9 @@
 package com.mymarket.membership.login;
 
-import com.mymarket.membership.member.MemberRepository;
 import com.mymarket.membership.member.MemberNotFoundException;
+import com.mymarket.membership.member.MemberRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.Objects;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Slf4j
 @Transactional
 public class MemberDetailsService implements UserDetailsService {

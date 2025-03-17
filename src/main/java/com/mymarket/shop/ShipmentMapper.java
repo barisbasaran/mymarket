@@ -2,13 +2,13 @@ package com.mymarket.shop;
 
 import com.mymarket.location.CountryService;
 import com.mymarket.location.State;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ShipmentMapper {
 
     private final CountryService countryService;

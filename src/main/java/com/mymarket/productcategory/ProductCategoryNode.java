@@ -8,12 +8,8 @@ import java.util.List;
 @Value
 @Builder
 public class ProductCategoryNode {
-
     Long id;
-
     boolean active;
-
     String name;
-
     List<ProductCategoryNode> children;
 }

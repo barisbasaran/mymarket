@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let memberId = new URLSearchParams(window.location.search).get('memberId');
+    let memberId = getQueryParam('memberId');
 
     fetchMember(memberId);
 });

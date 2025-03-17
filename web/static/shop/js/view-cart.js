@@ -80,10 +80,11 @@ function decreaseItemQuantity(productId) {
 }
 
 function checkout() {
-    $("#message").html("");
+    let $message = $("#message");
+    $message.html("");
     let shoppingCart = getCart();
     if (shoppingCart.items.length === 0) {
-        $("#message").html("Your shopping cart is empty!");
+        $message.html("Your shopping cart is empty!");
         return;
     }
     if (loggedIn) {

@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: mymarket
+  config:
+    import: "optional:file:.env[.properties]"
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    elasticsearch:
+      repositories:
+        enabled: false
+  datasource:
+    url: jdbc:tc:postgresql:17.2:///mydb2
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    username: postgres
+    password: sa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 10240MB
+      enabled: true
+server:
+  error:
+    include-stacktrace: never
+  forward-headers-strategy: native
+  servlet:
+    context-path: /service
+
+email:
+  host: live.smtp.mailtrap.io
+  port: 587
+  username: ${EMAIL_USERNAME}
+  password: ${EMAIL_PASSWORD}
+
+search:
+  username: elastic
+  password: bbmp1357
+  url: localhost:9200
+  index-at-startup: false
+
+security:
+  jwt:
+    secret-key: ${SECURITY_JWT_SECRET_KEY}
+    expiration-time: 18000000
+web:
+  base:
+    directory: web/static
+app:
+  base:
+    url: https://localhost
+  supported-locales: en_US,tr_TR,sv_SE,az_AZ

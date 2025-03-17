@@ -11,16 +11,10 @@ import java.util.List;
 @Value
 @Builder
 public class ProductDetails {
-
     Product product;
-
     List<ProductCategory> breadcrumb;
-
     List<Product> similarProducts;
-
     List<Review> reviews;
-
     ReviewSummary reviewSummary;
-
     boolean myProduct;
 }

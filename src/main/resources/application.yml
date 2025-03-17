@@ -33,8 +33,8 @@ email:
 search:
   username: ${SEARCH_USERNAME}
   password: ${SEARCH_PASSWORD}
-  api-key: ${SEARCH_API_KEY}
   url: localhost:9200
+  index-at-startup: true
 
 security:
   jwt:
@@ -46,3 +46,4 @@ web:
 app:
   base:
     url: https://localhost
+  supported-locales: en_US,tr_TR,sv_SE,az_AZ

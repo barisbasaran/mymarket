@@ -7,7 +7,7 @@ $(document).ready(function () {
 });
 
 function populateLogoutMessage() {
-    let logout = new URLSearchParams(window.location.search).get('logout');
+    let logout = getQueryParam('logout');
     if (logout) {
         let key = 'logged-out';
         translateKeys([key], (translations) => {
@@ -25,7 +25,7 @@ function login() {
             password: $("#password").val()
         }, (data) => {
             localStorage.setItem("jwtToken", data.token);
-            let page = new URLSearchParams(window.location.search).get('page');
+            let page = getQueryParam('page');
             if (page) {
                 window.location.href = page;
             } else {
