@@ -17,7 +17,7 @@ function getTestimonialRow() {
                 
                             <div className="author-info">
                                 <div className="author-pic">
-                                    <img src="/images/person-1.png" alt="Maria Jones" className="img-fluid"/>
+                                    <img src="/img/theme/person-1.png" alt="Maria Jones" className="img-fluid"/>
                                 </div>
                                 <h3 className="font-weight-bold">Maria Jones</h3>
                                 <span className="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>

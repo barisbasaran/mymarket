@@ -2,6 +2,7 @@ package com.mymarket.store;
 
 import com.mymarket.membership.member.MemberNotLoggedInException;
 import com.mymarket.membership.member.MemberService;
+import com.mymarket.search.IndexService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -28,6 +29,7 @@ public class StoreController {
     private final StoreService storeService;
     private final StoreValidator storeValidator;
     private final MemberService memberService;
+    private final IndexService indexService;
 
     @GetMapping("{storeId}/details")
     public StoreDetails getStoreDetails(@PathVariable Long storeId) {
@@ -61,6 +63,7 @@ public class StoreController {
         store.setMember(currentMember);
 
         var storeCreated = storeService.createStore(store);
+        indexService.updateStore(storeCreated);
 
         var uri = new URI("/service/products/" + storeCreated.getId());
         return ResponseEntity.created(uri).body(storeCreated);
@@ -75,6 +78,9 @@ public class StoreController {
         store.setMember(currentMember);
         store.setId(storeId);
 
-        return storeService.updateStore(storeId, store);
+        var updatedStore = storeService.updateStore(storeId, store);
+        indexService.updateStore(updatedStore);
+
+        return updatedStore;
     }
 }

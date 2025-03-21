@@ -105,7 +105,7 @@ function populateSimilarProducts(similarProducts) {
                     <h3 class="product-title">${product.name}</h3>
                     <strong class="product-price">${formatPrice(product.price)}</strong>
                     <span class="icon-cross">
-                        <img src="/images/cross.svg" class="img-fluid" alt="">
+                        <img src="/img/theme/cross.svg" class="img-fluid" alt="">
                     </span>
                 </a>
             </div>`);

@@ -40,7 +40,7 @@ function fetchProductCategoryDetails(pc) {
                              <h3 class="product-title">${product.name}</h3>
                              <strong class="product-price">&nbsp;${formatPrice(product.price)}</strong>
                              <span class="icon-cross">
-                                 <img src="/images/cross.svg" class="img-fluid">
+                                 <img src="/img/theme/cross.svg" class="img-fluid">
                              </span>
                          </a>
                      </div>`);

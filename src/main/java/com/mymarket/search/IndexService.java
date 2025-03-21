@@ -70,6 +70,10 @@ public class IndexService {
         sProductRepository.save(mapProductCategory(productCategory));
     }
 
+    public void updateStore(Store store) {
+        sProductRepository.save(mapStore(store));
+    }
+
     public void deleteProduct(Long productId) {
         sProductRepository.deleteById(getProductId(productId));
     }
