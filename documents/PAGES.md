@@ -46,11 +46,11 @@ You may view your account details.
 
 ![](images/manage-account1.png)
 
-You may update your contact information information.
+You may update your contact information.
 
 ![](images/manage-account2.png)
 
-You may update your contact address information.
+You may update your address information.
 
 ![](images/manage-account3.png)
 
