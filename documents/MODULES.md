@@ -59,11 +59,17 @@ The search results will be displayed in a new page.
 
 ![](images/search1.png)
 
-### My Account Menu
+### My Account Menu(Store Owner)
 
-If you're a **store owner**, you may view your account, orders and products by hovering the `My Account` link in the navigation bar.
+If you're a **store owner**, you may view your account, orders, stores, products and change password by hovering the `My Account` link in the navigation bar.
 
 ![](images/top-nav2.png)
+
+### My Account Menu(Regular User)
+
+If you're a **regular user**, you may view your account, orders and change password by hovering the `My Account` link in the navigation bar.
+
+![](images/top-nav4.png)
 
 ### Change Language
 
