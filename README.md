@@ -18,6 +18,10 @@ The project is structured as follows:
     - **sql**: Contains SQL scripts for the database.
     - **ssl**: Contains SSL certificates.
 
+## Application Modules
+
+You may find the details about application modules at [MODULES.md](documents/MODULES.md).
+
 ## Configuration
 
 ### Application Configuration
@@ -77,7 +81,7 @@ You may run the following to bring up the application in docker.
 
     docker-compose --profile local up
 
-You may find more details about the docker setup at [DOCKER.md](DOCKER.md).
+You may find more details about the docker setup at [DOCKER.md](documents/DOCKER.md).
 
 ## Local Nginx Setup
 
