@@ -73,6 +73,8 @@ You may change the language of the web site by clicking on the `Language` select
 
 ## Store Management
 
+The **store owner** may create, update, add products to his store.
+
 ### Create Store
 
 You may create a store by providing a name.
