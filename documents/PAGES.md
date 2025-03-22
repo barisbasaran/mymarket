@@ -42,10 +42,16 @@ You may change your password by providing a new password.
 
 ### Manage Account
 
-You may manage your account by viewing your account, updating your contact information and address information.
+You may view your account details.
 
 ![](images/manage-account1.png)
+
+You may update your contact information information.
+
 ![](images/manage-account2.png)
+
+You may update your contact address information.
+
 ![](images/manage-account3.png)
 
 ## Top Navigation
