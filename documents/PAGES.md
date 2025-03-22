@@ -1,4 +1,4 @@
-# Application Modules
+# Application Pages
 
 ## Account Management
 

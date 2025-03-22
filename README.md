@@ -18,9 +18,9 @@ The project is structured as follows:
     - **sql**: Contains SQL scripts for the database.
     - **ssl**: Contains SSL certificates.
 
-## Application Modules
+## Application Pages
 
-You may find the details about application modules at [MODULES.md](documents/MODULES.md).
+You may find the details about application pages at [PAGES.md](documents/PAGES.md).
 
 ## Configuration
 
