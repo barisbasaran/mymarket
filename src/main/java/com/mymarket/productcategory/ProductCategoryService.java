@@ -95,6 +95,7 @@ public class ProductCategoryService {
     }
 
     public void deleteProductCategory(Long productCategoryId) {
+        //TODO check if the category is not a parent of another category
         if (productService.findByProductCategory(productCategoryId).isEmpty()) {
             productCategoryRepository.deleteById(productCategoryId);
             log.info("product category deleted {}", productCategoryId);
