@@ -95,13 +95,16 @@ public class ProductCategoryService {
     }
 
     public void deleteProductCategory(Long productCategoryId) {
-        //TODO check if the category is not a parent of another category
-        if (productService.findByProductCategory(productCategoryId).isEmpty()) {
-            productCategoryRepository.deleteById(productCategoryId);
-            log.info("product category deleted {}", productCategoryId);
-        } else {
+        var productCategoryEntity = getProductCategoryEntity(productCategoryId);
+
+        if (!productCategoryRepository.findByParent(productCategoryEntity).isEmpty()) {
+            throw new ApplicationException("category-has-subcategories");
+        }
+        if (!productService.findByProductCategory(productCategoryId).isEmpty()) {
             throw new ApplicationException("category-has-products");
         }
+        productCategoryRepository.deleteById(productCategoryId);
+        log.info("product category deleted {}", productCategoryId);
     }
 
     private ProductCategoryEntity getProductCategoryEntity(Long productCategoryId) {
