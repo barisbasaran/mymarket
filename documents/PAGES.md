@@ -1,4 +1,4 @@
-# Application Modules
+# Application Pages
 
 ## Account Management
 
@@ -42,10 +42,16 @@ You may change your password by providing a new password.
 
 ### Manage Account
 
-You may manage your account by viewing your account, updating your contact information and address information.
+You may view your account details.
 
 ![](images/manage-account1.png)
+
+You may update your contact information.
+
 ![](images/manage-account2.png)
+
+You may update your address information.
+
 ![](images/manage-account3.png)
 
 ## Top Navigation
@@ -59,11 +65,19 @@ The search results will be displayed in a new page.
 
 ![](images/search1.png)
 
-### My Account Menu
+### My Account Menu 
 
-If you're a **store owner**, you may view your account, orders and products by hovering the `My Account` link in the navigation bar.
+#### Store Owner
+
+If you're a **store owner**, you may view your account, orders, stores, products and change password by hovering the `My Account` link in the navigation bar.
 
 ![](images/top-nav2.png)
+
+#### Regular User
+
+If you're a **regular user**, you may view your account, orders and change password by hovering the `My Account` link in the navigation bar.
+
+![](images/top-nav4.png)
 
 ### Change Language
 
@@ -72,6 +86,8 @@ You may change the language of the web site by clicking on the `Language` select
 ![](images/top-nav3.png)
 
 ## Store Management
+
+The **store owner** may create, update, add products to his store.
 
 ### Create Store
 

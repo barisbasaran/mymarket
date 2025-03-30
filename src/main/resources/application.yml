@@ -17,6 +17,17 @@ spring:
       max-file-size: 10240MB
       max-request-size: 10240MB
       enabled: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  health:
+    diskspace:
+      enabled: true
+    db:
+      enabled: true
+
 server:
   error:
     include-stacktrace: never
