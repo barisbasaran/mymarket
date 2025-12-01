@@ -33,7 +33,7 @@
         <java.version>25</java.version>
         <main.class>com.mymarket.MyMarketApplication</main.class>
         <postgresql.version>42.7.6</postgresql.version>
-        <lombok.version>1.18.38</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <jsonwebtoken.version>0.12.6</jsonwebtoken.version>
         <testcontainers.version>1.21.1</testcontainers.version>
         <mockito.version>5.18.0</mockito.version>
