@@ -9,7 +9,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import java.time.Duration;
 
 @Configuration
-//@EnableElasticsearchRepositories(basePackages = "com.mymarket.search")
+@EnableElasticsearchRepositories(basePackages = "com.mymarket.search")
 public class ElasticsearchConfig extends ElasticsearchConfiguration {
 
     private final String username;
