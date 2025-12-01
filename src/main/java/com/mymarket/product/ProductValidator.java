@@ -1,6 +1,5 @@
 package com.mymarket.product;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mymarket.membership.member.MemberNotLoggedInException;
 import com.mymarket.membership.member.MemberService;
 import com.mymarket.store.StoreValidator;
@@ -12,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
+import tools.jackson.databind.json.JsonMapper;
 
 import java.util.Map;
 
@@ -22,7 +22,7 @@ public class ProductValidator implements ApplicationValidator<Product> {
 
     @Getter
     private final Validator validator;
-    private final ObjectMapper objectMapper;
+    private final JsonMapper jsonMapper;
     private final MemberService memberService;
     private final StoreValidator storeValidator;
 
@@ -39,7 +39,7 @@ public class ProductValidator implements ApplicationValidator<Product> {
         }
         if (StringUtils.hasText(product.getSpecs())) {
             try {
-                objectMapper.readValue(product.getSpecs(), Map.class);
+                jsonMapper.readValue(product.getSpecs(), Map.class);
             } catch (Exception ex) {
                 bindingResult.rejectValue("specs", "", "{error.specs}");
             }
