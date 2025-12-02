@@ -1,6 +1,6 @@
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.2.1
     ports:
       - "9201:9200"
     environment:
@@ -14,8 +14,8 @@ services:
           "CMD-SHELL",
           "curl --output /dev/null --silent --head --fail -u ${SEARCH_USERNAME}:${SEARCH_PASSWORD} http://elasticsearch:9200",
         ]
-      interval: 1s
-      timeout: 5s
+      interval: 10s
+      timeout: 10s
       retries: 10
     networks:
       - mynetwork
