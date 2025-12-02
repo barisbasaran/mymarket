@@ -1,4 +1,4 @@
-FROM openjdk:23  AS builder
+FROM eclipse-temurin:25  AS builder
 
 RUN mkdir /project
 
@@ -8,7 +8,7 @@ WORKDIR /project
 
 RUN ./mvnw clean package
 
-FROM openjdk:23
+FROM eclipse-temurin:25
 
 RUN mkdir /app
 
