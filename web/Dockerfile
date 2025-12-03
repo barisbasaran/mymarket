@@ -4,8 +4,8 @@ FROM nginx:latest
 
 COPY ./nginx.conf /etc/nginx/
 
-RUN mkdir -p "/home2"
+RUN mkdir -p "/web-home"
 
-COPY --exclude=**/uploads ./static/ /home2/
-WORKDIR "/home2"
-RUN mkdir -p "/home2/uploads"
+COPY --exclude=**/uploads ./static/ /web-home/
+WORKDIR "/web-home"
+RUN mkdir -p "/web-home/uploads"
