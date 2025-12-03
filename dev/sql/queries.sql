@@ -6,8 +6,9 @@ select * from member;
 select * from member where id=45;
 select * from member_entity_roles where member_entity_id=45;
 
-update member set password='$2a$10$R3TXpuGDRzKTtAEZ725kFu5k/5UHpcyatur1qDE0gU1pzi32XV5ei';
-update member set email='basaran.baris+20@gmail.com' where email='basaran.baris@gmail.com';
+update member set password='$2a$10$VOGvhDgTupm9Ph2RDE7swO85CxNCbQ9XdUE9zVzuDo0FPqrGuydRO';
+update member set email='basaran.baris+1@gmail.com' where email='basaran.baris@gmail.com';
+update member set email='baris@gmail.com' where email='baris@ygmail.com';
 
 update member set first_name='', last_name='' where id=4;
 select * from member where id=4;
@@ -28,7 +29,10 @@ insert into member_entity_roles values (5, 0);
 insert into member_entity_roles values (6, 0);
 insert into member_entity_roles values (7, 0);
 
-insert into member (id,active, email, phone, name)
+insert into member (id,active, email, phone, first_name, last_name)
+values (2, true, 'baris@ygmail.com', '53234223367', 'Baris', 'Basaran');
+
+insert into member (id,active, email, phone, first_name)
 values (1, true, 'ali@yahoo.com', '53234223367', 'Ali Yıldız');
 
 insert into member (id,active, email, phone, name)
